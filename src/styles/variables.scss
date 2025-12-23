@@ -1,0 +1,21 @@
+$primary-color : rgb(154, 140, 204);
+
+$secondary-color: rgb(255, 0, 0);
+
+$large-font : 35px ;
+
+
+$spacing-sm: 6px;
+ $spacing-md: 13px;
+ $radius-sm: 9px;
+ $radius-md: 14px;
+ $spacing-lg: 18px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+

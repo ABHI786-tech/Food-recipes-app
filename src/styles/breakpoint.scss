@@ -1,0 +1,33 @@
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 996px;
+$desktop: 1200px;
+
+
+@mixin respond($device) {
+  @if $device == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $device == tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+  @else if $device == laptop {
+    @media (max-width: $laptop) { @content; }
+  }
+}
+
+
+// media query
+.card {
+  padding: 24px;
+
+  @include respond(laptop) {
+    padding: 16px;
+  }
+
+  @include respond(mobile) {
+    padding: 8px;
+    font-size: 23px;
+    color:red;
+  }
+}
