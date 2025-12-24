@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AccordionCard from "../components/AccordionCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipes } from "../redux/Slice";
+import { useNavigate } from "react-router-dom";
+
 
 const HomePage = () => {
    const [search, setSearch] = useState("");
@@ -9,6 +11,8 @@ const HomePage = () => {
   const { loading, data = [] } = useSelector(
     (state) => state.userRecipes
   );
+  const navigate = useNavigate();
+
 
    const filteredRecipes = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
@@ -105,7 +109,7 @@ const HomePage = () => {
 
         {!loading && (
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {data.map((item) => (
+            {(search ? filteredRecipes : data).map((item) => (
               <div
                 key={item.id}
                 className="
@@ -115,12 +119,12 @@ const HomePage = () => {
                   <img
                     src={item.image}
                     alt={item.name}
+                     onClick={() => navigate(`/recipe/${item.id}`)}
                     className="
                       h-48 w-full object-cover
                       transition-transform duration-500
                       group-hover:scale-110
-                    "
-                  />
+                    "/>
                 </div>
 
                 {/* CONTENT */}

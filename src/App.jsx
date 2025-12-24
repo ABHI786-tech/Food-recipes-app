@@ -4,9 +4,10 @@ import { Route, Routes } from 'react-router-dom'
 import LoginPage from "./pages/LoginPage"
 import RegisterPage from './pages/RegisterPage'
 import AboutPage from './pages/AboutPage'
-import "./styles/index.scss"
-import DashboardLayout from './layout/dashboardlayout'
 import HomePage from './pages/FoodRecipeApp'
+import DashboardLayout from './layout/dashboardLayout'
+import RecipeDetail from './pages/recipeDetail'
+// import "./styles/index.scss"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route element={<DashboardLayout />} >
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
+           <Route path="/recipe/:id" element={<RecipeDetail />} />
         </Route>
 
       </Routes>
