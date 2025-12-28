@@ -29,7 +29,7 @@ const HomePage = () => {
 
       {/* HERO SECTION */}
       <section
-        className="relative min-h-screen top-0 flex items-center w-full justify-center bg-cover bg-center"
+        className="relative min-h-screen top-0 flex items-center w-full justify-center bg-cover bg-center"  loading="eager"
         style={{ backgroundImage: "url('/images/dish.jpg')" }}
       >
          <div className=" top-0 min-h-screen absolute inset-0 bg-black/50"></div>
@@ -145,3 +145,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
